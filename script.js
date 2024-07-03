@@ -36,7 +36,7 @@ async function fetchExams() {
 
 async function loadExam(examFilename) {
   try {
-    const response = await fetch(`/exams/${examFilename}`);
+    const response = await fetch(examFilename);
     const examData = await response.json();
     selectedExamQuestions = shuffleArray(examData.questions);
     currentQuestionIndex = 0;
