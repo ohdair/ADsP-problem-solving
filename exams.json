@@ -1,10 +1,10 @@
 [
   {
-    "title": "ADsP 2과목 데이터 분석 기획",
+    "title": "ADsP 1과목 데이터의 이해",
     "filename": "ADsP_first_subject.json"
   },
   {
-    "title": "ADsP 3과목 데이터 이해",
+    "title": "ADsP 2과목 데이터 분석 기획",
     "filename": "ADsP_second_subject.json"
   }
 ]
