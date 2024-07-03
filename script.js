@@ -19,6 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
 async function fetchExams() {
   try {
     const response = await fetch("exams.json"); // 전체 시험 목록을 가져오는 JSON 파일
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
     const exams = await response.json();
     exams.forEach((exam) => {
       const button = document.createElement("button");
@@ -37,6 +40,9 @@ async function fetchExams() {
 async function loadExam(examFilename) {
   try {
     const response = await fetch(examFilename);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
     const examData = await response.json();
     selectedExamQuestions = shuffleArray(examData.questions);
     currentQuestionIndex = 0;
