@@ -18,13 +18,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function fetchExams() {
   try {
-    const response = await fetch("/exams.json"); // 전체 시험 목록을 가져오는 JSON 파일
+    const response = await fetch("exams.json"); // 전체 시험 목록을 가져오는 JSON 파일
     const exams = await response.json();
     exams.forEach((exam) => {
       const button = document.createElement("button");
       button.classList.add("btn");
       button.innerText = exam.title;
-      button.addEventListener("click", () => loadExam(exam.filename));
+      button.addEventListener("click", () =>
+        loadExam(`exams/${exam.filename}`)
+      );
       examButtonsContainer.appendChild(button);
     });
   } catch (error) {
