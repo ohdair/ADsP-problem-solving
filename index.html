@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="exam-container" class="container">
+      <h2>Select an Exam</h2>
+      <div id="exam-buttons" class="btn-grid"></div>
+    </div>
+    <div id="quiz-container" class="container hide">
+      <div id="question-container">
+        <div id="question">Question text</div>
+        <div id="passage" class="hide"></div>
+        <div id="answer-buttons" class="btn-grid"></div>
+        <input
+          type="text"
+          id="subjective-answer"
+          class="hide"
+          placeholder="Enter your answer"
+        />
+      </div>
+      <div id="navigation-buttons" class="btn-grid hide">
+        <button id="next-question" class="btn">Next Question</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
