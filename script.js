@@ -16,9 +16,16 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchExams();
 });
 
+function updateProgressBar() {
+  const progressBar = document.getElementById("progressBar");
+  const progressPercentage =
+    ((currentQuestionIndex + 1) / selectedExamQuestions.length) * 100;
+  progressBar.style.width = progressPercentage + "%";
+}
+
 async function fetchExams() {
   try {
-    const response = await fetch("exams.json"); // 전체 시험 목록을 가져오는 JSON 파일
+    const response = await fetch("exams.json");
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
@@ -60,6 +67,8 @@ function setNextQuestion() {
 }
 
 function showQuestion(question) {
+  updateProgressBar();
+
   questionElement.innerText = question.question;
 
   if (question.passage) {
