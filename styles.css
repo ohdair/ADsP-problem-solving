@@ -24,7 +24,7 @@ body {
   padding: 10px 20px;
   font-size: 16px;
   border: none;
-  background-color: #007bff;
+  background-color: #79a8cf;
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -32,11 +32,11 @@ body {
 }
 
 .btn:hover {
-  background-color: #0056b3;
+  background-color: #2069a5;
 }
 
 .correct {
-  background-color: #28a745 !important;
+  background-color: #2069a5 !important;
   color: white;
 }
 
@@ -51,6 +51,7 @@ body {
 
 #question {
   margin-bottom: 20px;
+  text-align: left;
 }
 
 #passage {
@@ -58,6 +59,7 @@ body {
   padding: 10px;
   border: 1px solid #ccc;
   background-color: #f9f9f9;
+  text-align: left;
 }
 
 #subjective-answer {
@@ -78,6 +80,6 @@ body {
 #progressBar {
   width: 0;
   height: 100%;
-  background-color: #76c7c0;
+  background-color: #79a8cf;
   transition: width 0.5s;
 }
