@@ -83,3 +83,9 @@ body {
   background-color: #79a8cf;
   transition: width 0.5s;
 }
+
+.responsive img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

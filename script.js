@@ -72,7 +72,14 @@ function showQuestion(question) {
   questionElement.innerText = question.question;
 
   if (question.passage) {
-    passageElement.innerText = question.passage;
+    if (/\.(png)$/.test(question.passage)) {
+      const imgElement = document.createElement("img");
+      imgElement.src = question.passage;
+      passageElement.innerHTML = "";
+      passageElement.appendChild(imgElement);
+    } else {
+      passageElement.innerText = question.passage;
+    }
     passageElement.classList.remove("hide");
   } else {
     passageElement.classList.add("hide");
@@ -83,12 +90,13 @@ function showQuestion(question) {
     answerButtonsElement.classList.remove("hide");
     question.options.forEach((option, index) => {
       const button = document.createElement("button");
-      button.innerText = option;
+      button.innerHTML = option;
       button.classList.add("btn");
       button.dataset.correct = (index + 1).toString() === question.answer;
       button.addEventListener("click", () => selectAnswer(button, question));
       answerButtonsElement.appendChild(button);
     });
+    MathJax.typeset();
   } else {
     answerButtonsElement.classList.add("hide");
     subjectiveAnswerElement.classList.remove("hide");
