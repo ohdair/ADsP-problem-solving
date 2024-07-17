@@ -69,10 +69,10 @@ function setNextQuestion() {
 function showQuestion(question) {
   updateProgressBar();
 
-  questionElement.innerText = question.question;
+  questionElement.innerText = `${question.number}. ${question.question}`;
 
   if (question.passage) {
-    if (/\.(png)$/.test(question.passage)) {
+    if (/\.(png|jpg|jpeg|gif)$/i.test(question.passage)) {
       const imgElement = document.createElement("img");
       imgElement.src = question.passage;
       passageElement.innerHTML = "";
@@ -85,14 +85,15 @@ function showQuestion(question) {
     passageElement.classList.add("hide");
   }
 
-  if (question.options.length != 0) {
+  if (question.options && question.options.length > 0) {
     subjectiveAnswerElement.classList.add("hide");
     answerButtonsElement.classList.remove("hide");
-    question.options.forEach((option, index) => {
+    const shuffledOptions = shuffleArray([...question.options]);
+    shuffledOptions.forEach((option, index) => {
       const button = document.createElement("button");
       button.innerHTML = option;
       button.classList.add("btn");
-      button.dataset.correct = (index + 1).toString() === question.answer;
+      button.dataset.correct = option === question.options[parseInt(question.answer) - 1];
       button.addEventListener("click", () => selectAnswer(button, question));
       answerButtonsElement.appendChild(button);
     });
@@ -119,8 +120,10 @@ function resetState() {
   subjectiveAnswerElement.onkeydown = null;
   navigationButtonsElement.classList.add("hide");
 
-  const resultItems = document.querySelectorAll(".result");
-  resultItems.forEach((item) => item.remove());
+  const explanationElement = document.querySelector('.explanation');
+  if (explanationElement) {
+    explanationElement.remove();
+  }
 }
 
 function selectAnswer(selectedButton, question) {
@@ -132,6 +135,7 @@ function selectAnswer(selectedButton, question) {
   } else {
     selectedButton.classList.add("wrong");
   }
+  showExplanation(question);
   navigationButtonsElement.classList.remove("hide");
   nextQuestionButton.onclick = () => {
     currentQuestionIndex++;
@@ -148,12 +152,7 @@ function selectSubjectiveAnswer(question) {
   const correctAnswer = question.answer;
   const isCorrect = userAnswer.toLowerCase() === correctAnswer.toLowerCase();
 
-  const resultItem = document.createElement("div");
-  resultItem.classList.add("result");
-  resultItem.innerHTML = `
-        <p><strong>Correct answer:</strong> ${correctAnswer}</p>
-    `;
-  questionContainer.appendChild(resultItem);
+  showExplanation(question);
 
   navigationButtonsElement.classList.remove("hide");
   nextQuestionButton.onclick = () => {
@@ -164,6 +163,41 @@ function selectSubjectiveAnswer(question) {
       showExamSelection();
     }
   };
+}
+
+function showExplanation(question) {
+  const explanationElement = document.createElement("div");
+  explanationElement.classList.add("explanation");
+  
+  let correctAnswer;
+  let explanationHtml = ``;
+  if (question.options.length == 0) {
+    correctAnswer = question.answer;
+    explanationHtml = `<p><strong>Correct answer:</strong> ${correctAnswer}</p>`;
+    explanationElement.innerHTML = explanationHtml;
+  }
+  
+  if (question.explanation) {
+    explanationHtml += `<p><strong>Explanation:</strong> ${question.explanation}</p>`;
+    explanationElement.innerHTML = explanationHtml;
+  }
+  
+  const oldExplanation = document.querySelector('.explanation');
+  if (oldExplanation) {
+    oldExplanation.remove();
+  }
+  
+  if (question.options && question.options.length > 0) {
+    const correctButton = Array.from(answerButtonsElement.children).find(
+      button => button.dataset.correct === "true"
+    );
+    
+    if (correctButton) {
+      correctButton.insertAdjacentElement('afterend', explanationElement);
+    }
+  } else {
+    subjectiveAnswerElement.insertAdjacentElement('afterend', explanationElement);
+  }
 }
 
 function setStatusClass(element, correct) {
