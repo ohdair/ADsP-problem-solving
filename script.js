@@ -69,7 +69,7 @@ function setNextQuestion() {
 function showQuestion(question) {
   updateProgressBar();
 
-  questionElement.innerText = `${question.number}. ${question.question}`;
+  questionElement.innerText = `${question.question}`;
 
   if (question.passage) {
     if (/\.(png|jpg|jpeg|gif)$/i.test(question.passage)) {
@@ -173,12 +173,12 @@ function showExplanation(question) {
   let explanationHtml = ``;
   if (question.options.length == 0) {
     correctAnswer = question.answer;
-    explanationHtml = `<p><strong>Correct answer:</strong> ${correctAnswer}</p>`;
+    explanationHtml = `<p><strong>${correctAnswer}</strong></p>`;
     explanationElement.innerHTML = explanationHtml;
   }
   
   if (question.explanation) {
-    explanationHtml += `<p><strong>Explanation:</strong> ${question.explanation}</p>`;
+    explanationHtml += `<p>${question.explanation}</p>`;
     explanationElement.innerHTML = explanationHtml;
   }
   
