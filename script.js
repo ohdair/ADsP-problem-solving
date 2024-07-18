@@ -94,6 +94,7 @@ function showQuestion(question) {
       button.innerHTML = option;
       button.classList.add("btn");
       button.dataset.correct = option === question.options[parseInt(question.answer) - 1];
+      button.dataset.originalIndex = question.options.indexOf(option);
       button.addEventListener("click", () => selectAnswer(button, question));
       answerButtonsElement.appendChild(button);
     });
