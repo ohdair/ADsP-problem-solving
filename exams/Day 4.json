@@ -1,345 +1,395 @@
 {
-  "title": "R 기초와 데이터 마트",
-  "questions": [
-    {
-      "number": 1,
-      "question": "R의 특징에 대한 설명 중 옳지 않은 것은?",
-      "passage": null,
-      "options": [
-        "R은 리눅스, Mac OS에서는 사용할 수 없다.",
-        "R은 S 언어 기반의 프로그래밍 언어이다.",
-        "다양한 형태의 데이터 구조를 지원한다.",
-        "무료 소프트웨어이면서도 강력한 통계분석 기능이 있다."
-      ],
-      "answer": "1"
-    },
-    {
-      "number": 2,
-      "question": "아래 보기에 날짜를 문자열로 변환하는 R 코드로 옳은 것은?",
-      "passage": "보기: \"2013-08-13\"",
-      "options": [
-        "as.Date(\"08/13/2013\", format = \"%d/%m/%Y\")",
-        "as.Date(\"08/13/2013\", format = \"%D/%M/%Y\")",
-        "as.Date(\"2013/08/13\", format = \"%Y/%m/%d\")",
-        "as.Date(\"2013/08/13\", format = \"%M/%D/%Y\")"
-      ],
-      "answer": "3"
-    },
-    {
-      "number": 3,
-      "question": "R에서는 c 함수를 활용하여 벡터와 벡터를 결합하고 새로운 벡터를 형성할 수 있다. 숫자형, 문자형, 논리연산자형 벡터를 병합할 때 벡터의 형식으로 옳은 것은?",
-      "passage": null,
-      "options": [
-        "문자형",
-        "숫자형",
-        "논리연산자형",
-        "고유의 형태를 모두 포함이 가능하다."
-      ],
-      "answer": "1"
-    },
-    {
-      "number": 4,
-      "question": "R에서 각 열이 서로 다른 유형의 데이터를 가질 수 있는 객체구조는?",
-      "passage": null,
-      "options": ["벡터", "데이터프레임", "행렬", "스칼라"],
-      "answer": "2"
-    },
-    {
-      "number": 5,
-      "question": "R패키지에 대한 설명 중 옳지 않은 것은?",
-      "passage": null,
-      "options": [
-        "data.table에서 리스트로 변경되면 ddply를 사용할 수 있다.",
-        "data.table은 데이터프레임과 유사하지만 보다 빠른 grouping이 가능하다.",
-        "plyr() 함수는 일반 개의 문자를 접두사로 가지는데, 첫 번째 문자는 입력하는 데이터 형태를 나타내고, 두 번째 문자는 출력하는 데이터 형태를 나타낸다.",
-        "reshape 패키지의 주요 기능은 melt()와 cast()가 있다."
-      ],
-      "answer": "1"
-    },
-    {
-      "number": 6,
-      "question": "R 패키지의 설치 및 로드에 대한 설명으로 옳은 것은?",
-      "passage": null,
-      "options": [
-        "install.packages(패키지명), library(\"패키지명\")",
-        "install.packages(\"패키지명\"), library(패키지명)",
-        "install.package(패키지명), library(\"패키지명\")",
-        "install.packages(패키지명), library(패키지명)"
-      ],
-      "answer": "2"
-    },
-    {
-      "number": 7,
-      "question": "R의 데이터 저장형식에 대한 설명으로 옳지 않은 것은?",
-      "passage": null,
-      "options": [
-        "mx <- matrix(c(23,41,12,35,67,1,24,7,53), nrow=3)로 실행 후, as.vector(mx) 결과는 행렬 형태로 변환된다.",
-        "숫자 형태 매트릭스는 1행부터 차례로 생성된다.",
-        "as.integer(3.14)의 값은 3이다.",
-        "as.logical(0.45)의 값은 TRUE이다."
-      ],
-      "answer": "1"
-    },
-    {
-      "number": 8,
-      "question": "R에서 y<-c(1,2,3,NA)일 때 3 × y의 실행결과로 옳은 것은?",
-      "passage": null,
-      "options": [
-        "3, 6, 9, 3, NA",
-        "NA, NA, NA, NA",
-        "3, 6, 9, NaN",
-        "3, 6, 9, NA"
-      ],
-      "answer": "4"
-    },
-    {
-      "number": 9,
-      "question": "아래 R코드의 실행결과로 옳은 것은?",
-      "passage": "> m <- matrix(c(1, 2, 3, 4, 5, 6), ncol=2, byrow=TRUE)\n> m\n     [, 1] [, 2]\n[1,]    1    2\n[2,]    3    4\n[3,]    5    6\n> m[1, ]",
-      "options": ["1 2", "3 4", "5 6", "1 3"],
-      "answer": "1"
-    },
-    {
-      "number": 10,
-      "question": "R의 plyr 함수 중 입력 데이터는 리스트이고, 출력 데이터는 데이터프레임인 plyr 함수는?",
-      "passage": null,
-      "options": ["ddply", "ldply", "adply", "dlply"],
-      "answer": "2"
-    },
-    {
-      "number": 11,
-      "question": "아래 R코드의 실행결과로 옳은 것은?",
-      "passage": "DF<-c(\"Monday\", \"Tuesday\", \"Wednesday\")\n> substr(DF, 1, 2)",
-      "options": [
-        "\"Mo\", \"Tu\", \"We\"",
-        "\"ay\", \"ay\", \"ay\"",
-        "\"Monday\", \"Tuesday\", \"Wednesday\"",
-        "\"Mon\", \"Tue\", \"Wed\""
-      ],
-      "answer": "1"
-    },
-    {
-      "number": 12,
-      "question": "다음 R코드의 실행결과에 대한 설명 중 옳지 않은 것은?",
-      "passage": "x<-c(1, 2, 3, 4)\ny<-c(\"apple\", \"banana\", \"orange\")\n> xy<-c(x, y)\n> xy",
-      "options": [
-        "xy의 결과값은 문자형이다.",
-        "xy의 값은 [1] \"1\" \"2\" \"3\" \"4\" \"apple\" \"banana\" \"orange\"이다.",
-        "xy[1] + xy[2]의 값은 3이다.",
-        "xy[c(5,7)], y[c(1,3)] 결과값은 서로 같다."
-      ],
-      "answer": "3"
-    },
-    {
-      "number": 13,
-      "question": "R에서 데이터 유형이 다른 데이터들을 하나의 객체로 묶는 구조는?",
-      "passage": null,
-      "options": ["행렬", "벡터", "스칼라", "리스트"],
-      "answer": "4"
-    },
-    {
-      "number": 14,
-      "question": "R의 벡터에 대한 설명으로 옳은 것은?",
-      "passage": null,
-      "options": [
-        "R의 리스트 벡터는 하나 또는 하나 이상의 스칼라 원소들을 갖는 집합이다.",
-        "벡터를 합칠 때 문자형 벡터가 포함되어 있으면 합쳐지는 벡터는 각각 고유의 벡터형을 갖는다.",
-        "논리형 벡터를 숫자형 벡터처럼 사용하는 경우 자동적으로 TRUE는 0 값을 갖는다.",
-        "R은 대소문자를 구분하지 않는다."
-      ],
-      "answer": "1"
-    },
-    {
-      "number": 15,
-      "question": "다음 중 R코드의 실행결과 값이 다른 것은?",
-      "passage": "fruit<-c(5, 10, 2, 1)\nnames(fruit)<-c(\"orange\", \"banana\", \"apple\", \"peach\")\n> fruit[\"apple\", \"banana\"]",
-      "options": [
-        "fruit[\"apple\", \"banana\"]",
-        "fruit[3:2]",
-        "fruit[c(3, 2)]",
-        "fruit[c(2, 3)]"
-      ],
-      "answer": "4"
-    },
-    {
-      "number": 16,
-      "question": "다음의 chickwts dataset은 여섯 가지 종류의 닭 첨가물(feed)과 각 사료를 먹인 닭의 무게 (weight) 변수이다. plyr 패키지의 ddply()를 이용하여 (나)와 같은 결과를 얻기 위해 사용해야 할 R코드로 알맞은 것은?",
-      "passage": "./exams/day4/16.png",
-      "options": [
-        "ddply(chickwts, .(feed), summarize, groupmean=mean(weight))",
-        "ddply(chickwts, ~feed, groupmean=mean(weight))",
-        "ddply(chickwts, weight~feed, groupmean=mean(weight))",
-        "ddply(chickwts, ~feed, summarize, groupmean=mean(weight))"
-      ],
-      "answer": "1"
-    },
-    {
-      "number": 17,
-      "question": "아래 R코드의 실행결과로 옳지 않은 것은?",
-      "passage": "x<-1:5\ny<-seq(10, 50, 10)\nrbind(x, y)",
-      "options": [
-        "2 x 5 행렬이다",
-        "x의 값은 [1] 1 2 3 4 5 이다.",
-        "x[3]의 값은 y[3]의 값과 같다.",
-        "데이터프레임 타입의 자료구조이다."
-      ],
-      "answer": "3"
-    },
-    {
-      "number": 18,
-      "question": "summary(subset_Wage)에 대한 설명으로 옳지 않은 것은?",
-      "passage": "./exams/day4/18.png",
-      "options": [
-        "age 변수의 중앙값은 42.0 이다",
-        "logwage 변수는 벡터를 추출하기 위해서는 subset_Wage$logwage를 실행한다.",
-        "wage 변수는 범주형 데이터 타입이다.",
-        "year 변수의 최댓값은 2009 이다."
-      ],
-      "answer": "3"
-    },
-    {
-      "number": 19,
-      "question": "파생변수는 사용자가 특정 조건을 만족하거나 특정 함수에 대해 값을 만들어 의미를 부여한 변수이다. 파생변수에 대한 설명으로 옳은 것은?",
-      "passage": null,
-      "options": [
-        "파생변수는 많은 데이터에서 공통적으로 많이 사용할 수 있다.",
-        "파생변수는 매우 주관적인 변수일 수 있으므로 논리적 타당성을 갖추어야 한다.",
-        "파생변수는 재활용성이 매우 높다.",
-        "파생변수는 다양한 모델 개발이 필요한 경우 효율적으로 사용할 수 있다."
-      ],
-      "answer": "2"
-    },
-    {
-      "number": 20,
-      "question": "상자그림(Box Plot)에 대한 설명 중 옳지 않은 것은?",
-      "passage": null,
-      "options": [
-        "사분위 수의 범위상자는 데이터의 중앙값을 나타낸다.",
-        "상자그림은 그룹 간 분포 차이를 비교할 수 있다.",
-        "순서통계량으로 이상값 판단에 적합하지 않다.",
-        "상자그룹에서 1QR은 제3사분위 수와 제1사분위 수 사이의 거리를 의미한다."
-      ],
-      "answer": "3"
-    },
-    {
-      "number": 21,
-      "question": "이상값(Outlier)의 처리에 대한 설명으로 옳지 않은 것은?",
-      "passage": null,
-      "options": [
-        "이상값을 제외하고 분석을 실시한다.",
-        "summary()로 이상값에 대한 일차적인 판단이 가능하다.",
-        "상자그림, 히스토그램, 산점도를 통해 이상값을 확인할 수 있다.",
-        "이상값 판별의 한 방법으로써 평균으로부터 3x 표준편차 이상 떨어져 있는 값을 이상 값으로 판단한다."
-      ],
-      "answer": "1"
-    },
-    {
-      "number": 22,
-      "question": "이상값 검색을 활용한 응용시스템으로 옳은 것은?",
-      "passage": null,
-      "options": [
-        "장바구니시스템",
-        "연관분석시스템",
-        "부정사용방지시스템",
-        "교차판매시스템"
-      ],
-      "answer": "3"
-    },
-    {
-      "number": 23,
-      "question": "이상값을 유용하게 활용하는 분야의 예시로 옳지 않은 것은?",
-      "passage": null,
-      "options": [
-        "환경파괴 : 자연세계에서 환경에 중요한 영향을 주는 가뭄, 홍수 등에 대해 정상적인 환경에서 발생하는 사건으로 해석할 수 있다.",
-        "사기탐지 : 도난당한 카드, 계좌 등에서 금액이 사용될 경우 평상시와 다른 패턴으로 인지하고 범죄를 수사할 수 있다.",
-        "의료행위 : 특정 환자에게 보여지는 예외적인 증상이나 검사결과를 통해 건강을 진단 할 수 있다.",
-        "침입탐지 : 네트워크 트래픽의 예외적인 행위를 탐지하고 분석하여 차단할 수 있다."
-      ],
-      "answer": "1"
-    },
-    {
-      "number": 24,
-      "question": "아래는 닭 사료의 종류(feed)와 닭의 성장(weight)에 대한 상자그림(Box Plot) 결과이다. 이를 통해 추론 가능한 사실로 옳지 않은 것은?",
-      "passage": "./exams/day4/24.png",
-      "options": [
-        "상자그림을 통해 이상값을 확인할 수는 없다.",
-        "horsebean은 자료가 왼쪽에 치우친 분포를 나타낸다.",
-        "casein이 다른 먹이 종류보다 가장 몸무게 중위수가 크다.",
-        "horsebean이 닭의 성장을 촉진하는데 가장 비효율적이다."
-      ],
-      "answer": "1"
-    },
-    {
-      "number": 25,
-      "question": "아래는 airquality dataset에 대한 상자그림(Box Plot) 결과이다. 이를 통해 추론 가능한 사실로 옳지 않은 것은?",
-      "passage": "./exams/day4/25.png",
-      "options": [
-        "Solar.R 중위수가 가장 크다.",
-        "Solar.R 분산이 가장 크다고 할 수 있다.",
-        "Ozone는 이상값이 2개가 존재한다.",
-        "Temp의 데이터 수가 가장 많음을 알 수 있다."
-      ],
-      "answer": "4"
-    },
-    {
-      "number": 26,
-      "question": "다음의 상자그림(Box Plot)에서 상한(최대값)과 하한(최소값)은 얼마인가?",
-      "passage": " Q1(1사분위수)= 4, Q3(3사분위수)= 12",
-      "options": [
-        "하한 =-8, 상한 =24",
-        "하한 =-6, 상한 = 22",
-        "하한=-2, 상한 = 18",
-        "하한 =-4, 상한 = 20"
-      ],
-      "answer": "4"
-    },
-    {
-      "number": 27,
-      "question": "mis 데이터에서 SQL 문법을 사용해 데이터 내용을 조회할 때 사용하는 R코드로 옳은 것은?",
-      "passage": null,
-      "options": [
-        "plyr (\"select* from iris\")",
-        "sql (\"select * from iris\")",
-        "mysql (\"select * from iris\")",
-        "sqldf(\"select * from iris\")"
-      ],
-      "answer": "4"
-    },
-    {
-      "number": 28,
-      "question": "탐색적 데이터 분석에서 수행되는 작업에 대한 설명으로 옳지 않은 것은?",
-      "passage": null,
-      "options": [
-        "데이터의 특성을 기반으로 적합한 분석기법을 선정한다.",
-        "분석모델을 기반으로 높은 유의성을 보유한 변수들을 선정한다.",
-        "탐색적 데이터 분석을 통해 데이터의 가설 적합성과 충분성을 검증한다.",
-        "데이터의 전문적 시각화 구현까지 염두해 두어야 한다."
-      ],
-      "answer": "4"
-    },
-    {
-      "number": 29,
-      "question": "결측값 처리에서 사용되는 대치법(Imputation)에 대한 설명으로 옳지 않은 것은?",
-      "passage": null,
-      "options": [
-        "완전분석법(Complete analysis)은 불완전한 자료는 모두 무시하고 완전하게 관측된 자료만으로 사용하여 분석하는 방법이다.",
-        "평균대치법(Mean Imputation)은 관측 또는 실험을 통해 얻어진 데이터의 평균으로 결측값을 대치하며 비조건부 평균대치법과 조건부 평균대치법 등이 활용된다.",
-        "다중대치법은 추정량 표준오차의 과소추정 문제를 여전히 가지고 있다.",
-        "단순확률대치법(Single Stochastic Imputation)은 평균대치법에서 추정량 표준오차의 과소추정 문제를 보완하고자 고안된 방법이다."
-      ],
-      "answer": "3"
-    },
-    {
-      "number": 30,
-      "question": "결측값을 대치하는 데 활용되는 R 함수에 대한 설명으로 옳지 않은 것은?",
-      "passage": null,
-      "options": [
-        "complete.cases() : 데이터 내에 결측값이 있으면 TRUE, 없으면 FALSE를 반환하는 함수이다.",
-        "is.na() : 데이터에 NA가 포함되었는지 여부를 판단하여 TRUE 또는 FALSE를 반환하는 함수이다.",
-        "na.omit() : 결측값이 포함된 행을 데이터에서 제거한다.",
-        "replace() : mean(), median() 등 값을 산출하는 함수를 이용해 결측값을 대체한다."
-      ],
-      "answer": "1"
-    }
-  ]
+    "title": "R 기초와 데이터 마트",
+    "questions": [
+        {
+            "number": 1,
+            "question": "R의 특징에 대한 설명 중 옳지 않은 것은?",
+            "passage": null,
+            "options": [
+                "R은 리눅스, Mac OS에서는 사용할 수 없다.",
+                "R은 S 언어 기반의 프로그래밍 언어이다.",
+                "다양한 형태의 데이터 구조를 지원한다.",
+                "무료 소프트웨어이면서도 강력한 통계분석 기능이 있다."
+            ],
+            "answer": "1",
+            "explanation": "R은 데이터 마이닝, 통계분석, 그래픽 시각화, 기계학습 등과 같은 데이터과학 분야에서 널리 사용되는 오픈소스이며, 윈도우, 맥, 리눅스 운영체제에서 사용이 가능하다."
+        },
+        {
+            "number": 2,
+            "question": "아래 보기에 날짜를 문자열로 변환하는 R 코드로 옳은 것은?",
+            "passage": "보기: \"2013-08-13\"",
+            "options": [
+                "as.Date(\"08/13/2013\", format = \"%d/%m/%Y\")",
+                "as.Date(\"08/13/2013\", format = \"%D/%M/%Y\")",
+                "as.Date(\"2013/08/13\", format = \"%Y/%m/%d\")",
+                "as.Date(\"2013/08/13\", format = \"%M/%D/%Y\")"
+            ],
+            "answer": "3",
+            "explanation": "as.Date() 함수는 날짜타입으로 변환하는 함수이며, 기본 포멧은 yyyy-mm-dd 이다"
+        },
+        {
+            "number": 3,
+            "question": "R에서는 c 함수를 활용하여 벡터와 벡터를 결합하고 새로운 벡터를 형성할 수 있다. 숫자형, 문자형, 논리연산자형 벡터를 병합할 때 벡터의 형식으로 옳은 것은?",
+            "passage": null,
+            "options": [
+                "문자형",
+                "숫자형",
+                "논리연산자형",
+                "고유의 형태를 모두 포함이 가능하다."
+            ],
+            "answer": "1",
+            "explanation": "형변환(Coercion)은 다양한 자료형이 섞여 있을 때, 그 중 하나의 일관된 자료형으로 모두 변 환하는 과정이며, 문자형 벡터 + 숫자형 벡터 = 문자형 벡터로 형변환된다."
+        },
+        {
+            "number": 4,
+            "question": "R에서 각 열이 서로 다른 유형의 데이터를 가질 수 있는 객체구조는?",
+            "passage": null,
+            "options": [
+                "벡터",
+                "데이터프레임",
+                "행렬",
+                "스칼라"
+            ],
+            "answer": "2",
+            "explanation": "데이터프레임은 테이블 형태의 행과 열로 구성된 데이터를 저장하고 처리하는데 사용되는 주 요 자료구조이다"
+        },
+        {
+            "number": 5,
+            "question": "R패키지에 대한 설명 중 옳지 않은 것은?",
+            "passage": null,
+            "options": [
+                "data.table에서 리스트로 변경되면 ddply를 사용할 수 있다.",
+                "data.table은 데이터프레임과 유사하지만 보다 빠른 grouping이 가능하다.",
+                "plyr() 함수는 일반 개의 문자를 접두사로 가지는데, 첫 번째 문자는 입력하는 데이터 형태를 나타내고, 두 번째 문자는 출력하는 데이터 형태를 나타낸다.",
+                "reshape 패키지의 주요 기능은 melt()와 cast()가 있다."
+            ],
+            "answer": "1",
+            "explanation": "ddply는 입력 데이터프레임, 출력도 데이터프레임일 때 사용하는 apply 함수이며, 입력을 리 스트로 사용하는 함수는 첫 단어가 ''로 시작해야 한다."
+        },
+        {
+            "number": 6,
+            "question": "R 패키지의 설치 및 로드에 대한 설명으로 옳은 것은?",
+            "passage": null,
+            "options": [
+                "install.packages(패키지명), library(\"패키지명\")",
+                "install.packages(\"패키지명\"), library(패키지명)",
+                "install.package(패키지명), library(\"패키지명\")",
+                "install.packages(패키지명), library(패키지명)"
+            ],
+            "answer": "2",
+            "explanation": "R에서 패키지를 설치할 때는 install packages(\"패키지명)으로 패키지명에 \"를 지정해주어 야 하며, 로드할 때는 library(package_name)으로 \"\"를 제거해주어야 한다."
+        },
+        {
+            "number": 7,
+            "question": "R의 데이터 저장형식에 대한 설명으로 옳지 않은 것은?",
+            "passage": null,
+            "options": [
+                "mx <- matrix(c(23,41,12,35,67,1,24,7,53), nrow=3)로 실행 후, as.vector(mx) 결과는 행렬 형태로 변환된다.",
+                "숫자 형태 매트릭스는 1행부터 차례로 생성된다.",
+                "as.integer(3.14)의 값은 3이다.",
+                "as.logical(0.45)의 값은 TRUE이다."
+            ],
+            "answer": "1",
+            "explanation": "mx <- matrix(c(23, 41, 12, 35, 67, 1, 24, 7, 53), nrow = 3)의 결과는 3행으로 구분되어 출력된다"
+        },
+        {
+            "number": 8,
+            "question": "R에서 y<-c(1,2,3,NA)일 때 3 × y의 실행결과로 옳은 것은?",
+            "passage": null,
+            "options": [
+                "3, 6, 9, 3, NA",
+                "NA, NA, NA, NA",
+                "3, 6, 9, NaN",
+                "3, 6, 9, NA"
+            ],
+            "answer": "4",
+            "explanation": "NA는 결측값(Missing Value)을 나타내는 상수를 의미한다"
+        },
+        {
+            "number": 9,
+            "question": "아래 R코드의 실행결과로 옳은 것은?",
+            "passage": "> m <- matrix(c(1, 2, 3, 4, 5, 6), ncol=2, byrow=TRUE)\n> m\n     [, 1] [, 2]\n[1,]    1    2\n[2,]    3    4\n[3,]    5    6\n> m[1, ]",
+            "options": [
+                "1 2",
+                "3 4",
+                "5 6",
+                "1 3"
+            ],
+            "answer": "1",
+            "explanation": "매트릭스에서 특정 요소(값)에 접근하기 위해서 matrix[row, column]을 사용한다"
+        },
+        {
+            "number": 10,
+            "question": "R의 plyr 함수 중 입력 데이터는 리스트이고, 출력 데이터는 데이터프레임인 plyr 함수는?",
+            "passage": null,
+            "options": [
+                "ddply",
+                "ldply",
+                "adply",
+                "dlply"
+            ],
+            "answer": "2",
+            "explanation": "plyr 함수 중 입력 데이터는 리스트이고, 출력 데이터 형태는 데이터프레임인 plyr 함수는 입 력 데이터(1자리)/출력 데이터(1자리) + ply(3자리) 5글자로 함수명이 정해지기 때문에 ld가 붙어 ldply가 된다."
+        },
+        {
+            "number": 11,
+            "question": "아래 R코드의 실행결과로 옳은 것은?",
+            "passage": "DF<-c(\"Monday\", \"Tuesday\", \"Wednesday\")\n> substr(DF, 1, 2)",
+            "options": [
+                "\"Mo\", \"Tu\", \"We\"",
+                "\"ay\", \"ay\", \"ay\"",
+                "\"Monday\", \"Tuesday\", \"Wednesday\"",
+                "\"Mon\", \"Tue\", \"Wed\""
+            ],
+            "answer": "1",
+            "explanation": "substr() 함수는 문자열에서 시작과 끝을 지정하여 부분을 추출하는 함수이다"
+        },
+        {
+            "number": 12,
+            "question": "다음 R코드의 실행결과에 대한 설명 중 옳지 않은 것은?",
+            "passage": "x<-c(1, 2, 3, 4)\ny<-c(\"apple\", \"banana\", \"orange\")\n> xy<-c(x, y)\n> xy",
+            "options": [
+                "xy의 결과값은 문자형이다.",
+                "xy의 값은 [1] \"1\" \"2\" \"3\" \"4\" \"apple\" \"banana\" \"orange\"이다.",
+                "xy[1] + xy[2]의 값은 3이다.",
+                "xy[c(5,7)], y[c(1,3)] 결과값은 서로 같다."
+            ],
+            "answer": "3",
+            "explanation": "c() 함수는 나열된 데이터나 객체들을 하나의 객체로 결합하는 함수이며, 결과는 [1] \"1\" \"2\" \"3\" \"4\" \"apple\" \"banana \"orange\"로 출력된다"
+        },
+        {
+            "number": 13,
+            "question": "R에서 데이터 유형이 다른 데이터들을 하나의 객체로 묶는 구조는?",
+            "passage": null,
+            "options": [
+                "행렬",
+                "벡터",
+                "스칼라",
+                "리스트"
+            ],
+            "answer": "4",
+            "explanation": "리스트는 여러 개의 객체를 담을 수 있는 유연한 자료구조이다"
+        },
+        {
+            "number": 14,
+            "question": "R의 벡터에 대한 설명으로 옳은 것은?",
+            "passage": null,
+            "options": [
+                "R의 리스트 벡터는 하나 또는 하나 이상의 스칼라 원소들을 갖는 집합이다.",
+                "벡터를 합칠 때 문자형 벡터가 포함되어 있으면 합쳐지는 벡터는 각각 고유의 벡터형을 갖는다.",
+                "논리형 벡터를 숫자형 벡터처럼 사용하는 경우 자동적으로 TRUE는 0 값을 갖는다.",
+                "R은 대소문자를 구분하지 않는다."
+            ],
+            "answer": "1",
+            "explanation": "벡터는 하나 이상의 원소(Element, 구성되는 값)로 이루어진 1차원 데이터를 저장하기 위한 자료구조이며, 벡터를 합칠 때 문자형 벡터가 포함되어 있으면 문자형으로 형변환된다"
+        },
+        {
+            "number": 15,
+            "question": "다음 중 R코드의 실행결과 값이 다른 것은?",
+            "passage": "fruit<-c(5, 10, 2, 1)\nnames(fruit)<-c(\"orange\", \"banana\", \"apple\", \"peach\")\n> fruit[\"apple\", \"banana\"]",
+            "options": [
+                "fruit[\"apple\", \"banana\"]",
+                "fruit[3:2]",
+                "fruit[c(3, 2)]",
+                "fruit[c(2, 3)]"
+            ],
+            "answer": "4",
+            "explanation": "names() 함수는 벡터, 리스트, 데이터프레임 등의 객체에 이름을 설정하거나 가져오는데 사용한다."
+        },
+        {
+            "number": 16,
+            "question": "다음의 chickwts dataset은 여섯 가지 종류의 닭 첨가물(feed)과 각 사료를 먹인 닭의 무게 (weight) 변수이다. plyr 패키지의 ddply()를 이용하여 (나)와 같은 결과를 얻기 위해 사용해야 할 R코드로 알맞은 것은?",
+            "passage": "./exams/day4/16.png",
+            "options": [
+                "ddply(chickwts, .(feed), summarize, groupmean=mean(weight))",
+                "ddply(chickwts, ~feed, groupmean=mean(weight))",
+                "ddply(chickwts, weight~feed, groupmean=mean(weight))",
+                "ddply(chickwts, ~feed, summarize, groupmean=mean(weight))"
+            ],
+            "answer": "1",
+            "explanation": "결과는 feed별 weight의 평균임을 알 수 있다"
+        },
+        {
+            "number": 17,
+            "question": "아래 R코드의 실행결과로 옳지 않은 것은?",
+            "passage": "x<-1:5\ny<-seq(10, 50, 10)\nrbind(x, y)",
+            "options": [
+                "2 x 5 행렬이다",
+                "x의 값은 [1] 1 2 3 4 5 이다.",
+                "x[3]의 값은 y[3]의 값과 같다.",
+                "데이터프레임 타입의 자료구조이다."
+            ],
+            "answer": "3",
+            "explanation": "seg() 함수는 일정한 간격의 숫자 시퀀스를 생성하는 함수이며, rbind(시작, 끝, 간격) 함수는 벡터, 행렬, 또는 데이터프레임을 행(Row) 방향으로 결합하는 함수이다"
+        },
+        {
+            "number": 18,
+            "question": "summary(subset_Wage)에 대한 설명으로 옳지 않은 것은?",
+            "passage": "./exams/day4/18.png",
+            "options": [
+                "age 변수의 중앙값은 42.0 이다",
+                "logwage 변수는 벡터를 추출하기 위해서는 subset_Wage$logwage를 실행한다.",
+                "wage 변수는 범주형 데이터 타입이다.",
+                "year 변수의 최댓값은 2009 이다."
+            ],
+            "answer": "3",
+            "explanation": "Summary( ) 함수는 숫자 열은 최소값, 1사분위수, 중앙값, 평균, 3사분위수, 최대값을 출력하 고, 범주형 열은 각 범주의 도수를 출력한다."
+        },
+        {
+            "number": 19,
+            "question": "파생변수는 사용자가 특정 조건을 만족하거나 특정 함수에 대해 값을 만들어 의미를 부여한 변수이다. 파생변수에 대한 설명으로 옳은 것은?",
+            "passage": null,
+            "options": [
+                "파생변수는 많은 데이터에서 공통적으로 많이 사용할 수 있다.",
+                "파생변수는 매우 주관적인 변수일 수 있으므로 논리적 타당성을 갖추어야 한다.",
+                "파생변수는 재활용성이 매우 높다.",
+                "파생변수는 다양한 모델 개발이 필요한 경우 효율적으로 사용할 수 있다."
+            ],
+            "answer": "2",
+            "explanation": "파생변수는 매우 주관적일 수 있으므로 논리적 타당성을 갖추어서 생성해야 하며, 상황에 따라 특정 상황에만 유의미하지 않도록 대표성을 부여해야 한다."
+        },
+        {
+            "number": 20,
+            "question": "상자그림(Box Plot)에 대한 설명 중 옳지 않은 것은?",
+            "passage": null,
+            "options": [
+                "사분위 수의 범위상자는 데이터의 중앙값을 나타낸다.",
+                "상자그림은 그룹 간 분포 차이를 비교할 수 있다.",
+                "순서통계량으로 이상값 판단에 적합하지 않다.",
+                "상자그룹에서 1QR은 제3사분위 수와 제1사분위 수 사이의 거리를 의미한다."
+            ],
+            "answer": "3",
+            "explanation": "상자그림(상자수염그림이라고도 함)은 데이터의 분포를 시각적으로 나타내기 위한 그래픽 도 구로, 데이터의 중앙값"
+        },
+        {
+            "number": 21,
+            "question": "이상값(Outlier)의 처리에 대한 설명으로 옳지 않은 것은?",
+            "passage": null,
+            "options": [
+                "이상값을 제외하고 분석을 실시한다.",
+                "summary()로 이상값에 대한 일차적인 판단이 가능하다.",
+                "상자그림, 히스토그램, 산점도를 통해 이상값을 확인할 수 있다.",
+                "이상값 판별의 한 방법으로써 평균으로부터 3x 표준편차 이상 떨어져 있는 값을 이상 값으로 판단한다."
+            ],
+            "answer": "1",
+            "explanation": "이상값은 무조건 삭제보다는 전체 데이터에 어떤 영향을 주는지 확인 후 삭제할지 대치할지를 결정해야 하고, 삭제는 정보의 손실을 발생하기 때문에 지양하는 것이 좋다."
+        },
+        {
+            "number": 22,
+            "question": "이상값 검색을 활용한 응용시스템으로 옳은 것은?",
+            "passage": null,
+            "options": [
+                "장바구니시스템",
+                "연관분석시스템",
+                "부정사용방지시스템",
+                "교차판매시스템"
+            ],
+            "answer": "3",
+            "explanation": "이상값은 크거나 작은 범위를 가지는 값이기 때문에 일반적인 패턴에서 벗어나는 패턴인 경우 를 판단하는 과정에서 활용성이 높다"
+        },
+        {
+            "number": 23,
+            "question": "이상값을 유용하게 활용하는 분야의 예시로 옳지 않은 것은?",
+            "passage": null,
+            "options": [
+                "환경파괴 : 자연세계에서 환경에 중요한 영향을 주는 가뭄, 홍수 등에 대해 정상적인 환경에서 발생하는 사건으로 해석할 수 있다.",
+                "사기탐지 : 도난당한 카드, 계좌 등에서 금액이 사용될 경우 평상시와 다른 패턴으로 인지하고 범죄를 수사할 수 있다.",
+                "의료행위 : 특정 환자에게 보여지는 예외적인 증상이나 검사결과를 통해 건강을 진단 할 수 있다.",
+                "침입탐지 : 네트워크 트래픽의 예외적인 행위를 탐지하고 분석하여 차단할 수 있다."
+            ],
+            "answer": "1",
+            "explanation": "이상값은 크거나 작은 범위를 가지는 값이기 때문에 일반적인 패턴에서 벗어나는 패턴인 경우 를 판단하는 과정에서 활용성이 높다"
+        },
+        {
+            "number": 24,
+            "question": "아래는 닭 사료의 종류(feed)와 닭의 성장(weight)에 대한 상자그림(Box Plot) 결과이다. 이를 통해 추론 가능한 사실로 옳지 않은 것은?",
+            "passage": "./exams/day4/24.png",
+            "options": [
+                "상자그림을 통해 이상값을 확인할 수는 없다.",
+                "horsebean은 자료가 왼쪽에 치우친 분포를 나타낸다.",
+                "casein이 다른 먹이 종류보다 가장 몸무게 중위수가 크다.",
+                "horsebean이 닭의 성장을 촉진하는데 가장 비효율적이다."
+            ],
+            "answer": "1",
+            "explanation": "상자그림을 통해 hosethean은 중앙값이 왼쪽에 존재하므로, 자료가 왼쪽에 치우친 분포를 나 타내는 것을 알 수 있으며, 또한 sunilower의 사료에서 이상값이 있음을 알 수 있다(동그라미 표시 데이터)."
+        },
+        {
+            "number": 25,
+            "question": "아래는 airquality dataset에 대한 상자그림(Box Plot) 결과이다. 이를 통해 추론 가능한 사실로 옳지 않은 것은?",
+            "passage": "./exams/day4/25.png",
+            "options": [
+                "Solar.R 중위수가 가장 크다.",
+                "Solar.R 분산이 가장 크다고 할 수 있다.",
+                "Ozone는 이상값이 2개가 존재한다.",
+                "Temp의 데이터 수가 가장 많음을 알 수 있다."
+            ],
+            "answer": "4",
+            "explanation": "Solar.R의 박스의 중앙 실선이 200을 넘어 가장 큰 것을 알 수 있으며, 분산 또한 박스의 범위 로 보아 가장 큰 것을 알 수 있다"
+        },
+        {
+            "number": 26,
+            "question": "다음의 상자그림(Box Plot)에서 상한(최대값)과 하한(최소값)은 얼마인가?",
+            "passage": " Q1(1사분위수)= 4, Q3(3사분위수)= 12",
+            "options": [
+                "하한 =-8, 상한 =24",
+                "하한 =-6, 상한 = 22",
+                "하한=-2, 상한 = 18",
+                "하한 =-4, 상한 = 20"
+            ],
+            "answer": "4",
+            "explanation": "최소값(01-1.5 x IQR), 최대값(Q3 + 1.5 x IOR)을 기준으로 이 범위를 벗어나는 값들을 이상값으로 판단할 수 있다"
+        },
+        {
+            "number": 27,
+            "question": "mis 데이터에서 SQL 문법을 사용해 데이터 내용을 조회할 때 사용하는 R코드로 옳은 것은?",
+            "passage": null,
+            "options": [
+                "plyr (\"select* from iris\")",
+                "sql (\"select * from iris\")",
+                "mysql (\"select * from iris\")",
+                "sqldf(\"select * from iris\")"
+            ],
+            "answer": "4",
+            "explanation": "sqldf는 SOL 문법을 사용해 R에서 데이터프레임을 조작하게 해주는 패키지이다"
+        },
+        {
+            "number": 28,
+            "question": "탐색적 데이터 분석에서 수행되는 작업에 대한 설명으로 옳지 않은 것은?",
+            "passage": null,
+            "options": [
+                "데이터의 특성을 기반으로 적합한 분석기법을 선정한다.",
+                "분석모델을 기반으로 높은 유의성을 보유한 변수들을 선정한다.",
+                "탐색적 데이터 분석을 통해 데이터의 가설 적합성과 충분성을 검증한다.",
+                "데이터의 전문적 시각화 구현까지 염두해 두어야 한다."
+            ],
+            "answer": "4",
+            "explanation": "탐색적 데이터 분석은 데이터를 시각화해서 다양한 각도로 이해하는 과정이며, 원 데이터를 가 지고 유연하게 데이터를 탐색하고, 얻은 정보를 바탕으로 통계모델을 만들기 위한 분석방법이 다"
+        },
+        {
+            "number": 29,
+            "question": "결측값 처리에서 사용되는 대치법(Imputation)에 대한 설명으로 옳지 않은 것은?",
+            "passage": null,
+            "options": [
+                "완전분석법(Complete analysis)은 불완전한 자료는 모두 무시하고 완전하게 관측된 자료만으로 사용하여 분석하는 방법이다.",
+                "평균대치법(Mean Imputation)은 관측 또는 실험을 통해 얻어진 데이터의 평균으로 결측값을 대치하며 비조건부 평균대치법과 조건부 평균대치법 등이 활용된다.",
+                "다중대치법은 추정량 표준오차의 과소추정 문제를 여전히 가지고 있다.",
+                "단순확률대치법(Single Stochastic Imputation)은 평균대치법에서 추정량 표준오차의 과소추정 문제를 보완하고자 고안된 방법이다."
+            ],
+            "answer": "3",
+            "explanation": "다중대치법은 단순대치법을 m번 수행하여 m개의 가상적 완전 자료를 만들어 분석하는 방법으로 결측값 추정을 여러 번 반복하여 데이터셋을 생성 후 결측값을 대치한다"
+        },
+        {
+            "number": 30,
+            "question": "결측값을 대치하는 데 활용되는 R 함수에 대한 설명으로 옳지 않은 것은?",
+            "passage": null,
+            "options": [
+                "complete.cases() : 데이터 내에 결측값이 있으면 TRUE, 없으면 FALSE를 반환하는 함수이다.",
+                "is.na() : 데이터에 NA가 포함되었는지 여부를 판단하여 TRUE 또는 FALSE를 반환하는 함수이다.",
+                "na.omit() : 결측값이 포함된 행을 데이터에서 제거한다.",
+                "replace() : mean(), median() 등 값을 산출하는 함수를 이용해 결측값을 대체한다."
+            ],
+            "answer": "1",
+            "explanation": "complete.cases() 함수는 데이터 내에 결측값이 없으면 TRUE, 있으면 FALSE를 반환하는 함 수이다."
+        }
+    ]
 }
