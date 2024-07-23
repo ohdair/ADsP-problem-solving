@@ -16,3 +16,5 @@ def convert(file_path, explanation_path):
 
     with open(file_path, 'w', encoding='utf-8') as json_file:
         json.dump(data, json_file, ensure_ascii=False, indent=4)
+
+# convert('./exams/Day 6.json', 'text')
